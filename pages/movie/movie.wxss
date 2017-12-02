@@ -1,0 +1,57 @@
+/* pages/movie/movie.wxss */
+.slider {
+  height: 400rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+/*content  */
+.contentBox {
+  margin: 10rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 5rpx 20rpx;
+
+}
+.contentTitle {
+  position: relative;  
+  line-height:110rpx;
+  padding-left:60rpx;
+  border-bottom:1px solid #ccc;
+  margin:0 auto;
+  box-sizing:border-box;
+  letter-spacing:10px;
+  font-weight:900;
+  color: #333;
+  font-size:48rpx; 
+}
+.conIcon {
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*列表  */
+.list {
+  height: 200rpx;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 10rpx;
+}
+.listImg {
+  height: 100%;
+  width: 25%;
+}
+.listInfo {
+  float: right;
+  width: 65%;
+  height: 95%;
+  font-size:28rpx;
+  line-height:47rpx;
+  padding: 5rpx 15rpx;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  background: #FAF5F5;
+}

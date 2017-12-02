@@ -1,0 +1,28 @@
+<!--首页轮播图  -->
+<swiper class='slider' indicator-dots="true"
+  autoplay="true" interval="3000" duration="500" circular="true" indicator-active-color="#fff">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--导航分类  -->
+<view class='navbar'>
+  <view class='navbarItem' bindtap='goMovie'>
+    <image src="../../images/movie.png" class='navbarImg'></image>
+    <view class='navbarTitle'>电影</view>
+  </view>
+  <view class='navbarItem'>
+    <image src="../../images/meishi.png" class='navbarImg'></image>
+    <view class='navbarTitle'>美食</view>
+  </view>
+  <view class='navbarItem'>
+    <image src="../../images/lvyou.png" class='navbarImg'></image>
+    <view class='navbarTitle'>旅游</view>
+  </view>
+  <view class='navbarItem'>
+    <image src="../../images/jiaotong.png" class='navbarImg'></image>
+    <view class='navbarTitle'>交通</view>
+  </view>
+</view>

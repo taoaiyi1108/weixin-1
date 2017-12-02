@@ -1,0 +1,29 @@
+<!--电影轮播图  -->
+<swiper class='slider' indicator-dots="true"
+  autoplay="true" interval="3000" duration="500" circular="true" indicator-active-color="#fff">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='content'>
+  <view class='contentBox'>
+    <view class='contentTitle'> 
+     <image src="../../images/hot.png" class='conIcon'></image>
+      热映
+    </view>
+    <view class='contentInfo'>
+      <view class='list' wx:for="{{hotData}}">
+        <image src="{{item.images.small}}" class='listImg'></image>
+         <view class='listInfo'>
+            <view class='movieName'>电影名：{{item.title}}</view>
+            <view class='directors'>导演：{{item.directors[0].name}}</view>
+            <view class='collect_count'>收藏数：{{item.collect_count}}</view>
+            <view class='genres'>分类：{{item.genres}}</view>
+         </view>
+      </view>
+     
+    </view>
+  </view>
+</view>

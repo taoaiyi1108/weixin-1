@@ -1,0 +1,30 @@
+/*slide-image */
+.slider {
+  height: 450rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+/*navbar  */
+.navbar {
+  height: 130rpx;
+  margin: 5rpx auto;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.navbar .navbarItem {
+  float:left;
+  width: 25%; 
+  height: 100%;
+  text-align: center;
+}
+.navbarImg {
+  width:80rpx;
+  height: 80rpx;
+  margin-top: 5rpx;
+}
+.navbarTitle {
+  font-size: 28rpx;
+  color: #111;
+}
