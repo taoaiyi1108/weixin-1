@@ -6,12 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
-    ],
-    hotData:[]
+    hotData:[],
+    goData:[],
+    top250Data:[],
+    searchValue:''
   },
   
   /**
@@ -20,7 +18,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: 'http://api.douban.com/v2/movie/in_theaters', //仅为示例，并非真实的接口地址
+      url: 'https://api.douban.com/v2/movie/in_theaters', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/text' // 默认值
       },
@@ -29,24 +27,104 @@ Page({
         that.setData({
           hotData:res.data.subjects
         })
-       
-        console.log(_this.hotData)
+        // var hotData = JSON.stringify(res.data.subjects);
+        // wx.setStorage({
+        //   key: 'hotData',
+        //   data: hotData,
+        // })
+      }
+    })
+    wx.request({
+      url: 'https://api.douban.com/v2/movie/coming_soon', //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/text' // 默认值
+      },
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          goData: res.data.subjects
+        })
+        // var goData = JSON.stringify(res.data.subjects);
+        // wx.setStorage({
+        //   key: 'goData',
+        //   data: goData,
+        // })
+      }
+    })
+    wx.request({
+      url: 'https://api.douban.com/v2/movie/top250', //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/text' // 默认值
+      },
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          top250Data: res.data.subjects
+        })
+        // var top250Data = JSON.stringify(res.data.subjects);
+        // wx.setStorage({
+        //   key: 'top250Data',
+        //   data: top250Data,
+        // })
       }
     })
   },
-
+  // 获取搜索矿中的值
+  getMoviesearchValue(e){
+    this.setData({
+      searchValue: e.detail.value
+    })
+  },
+  // 跳转到moviesearch页面
+  moviesearch(){
+    var obj = {};
+    var id = this.data.searchValue.trim();
+    obj.type = "searchId"
+    obj.info = id;
+    obj = JSON.stringify(obj)
+    if (this.data.searchValue.length == 0 ){
+      return;
+    }else {
+      wx.setStorage({
+        key: 'id',
+        data: obj,
+      })
+      wx.navigateTo({
+        url: '../movieList/movieList',
+      })
+    }
+  },
+  // 键盘 enter事件
+  searchSubmit(){
+   console.log(1)
+  },
+  // 点击更多 跳转movieList
+  gomovieList(id){
+    console.log(id.currentTarget)
+    var obj = {};
+    obj.type = id.currentTarget.id;
+    obj.info = "more"
+    obj = JSON.stringify(obj)
+    wx.setStorage({
+      key: 'id',
+      data: obj,
+    })
+    wx.navigateTo({
+      url: '../movieList/movieList',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

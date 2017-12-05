@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/skill/skill",
     "pages/photo/photo",
-    "pages/movie/movie"
+    "pages/movie/movie",
+    "pages/movieList/movieList",
+    "pages/movieContent/movieContent"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -50,6 +52,5 @@
     "connectSocket": 20000,
     "uploadFile": 20000,
     "downloadFile": 20000
-  },
-  "debug": true
+  }
 }

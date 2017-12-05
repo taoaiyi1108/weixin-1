@@ -10,7 +10,6 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
     ]},
   goMovie(){
-    console.log(1)
     wx.navigateTo({
       url: '../movie/movie',
     })

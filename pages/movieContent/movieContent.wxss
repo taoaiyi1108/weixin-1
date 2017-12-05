@@ -1,0 +1,42 @@
+/* pages/movieContent/movieContent.wxss */
+.header {
+  height:80rpx;
+  text-align:center;
+  line-height:80rpx;
+  background:#D9DFEB;
+}
+.introduce {
+  overflow: hidden;
+  height: 350rpx;
+  padding:30rpx 20rpx;
+  border-bottom:1px solid #ccc;
+}
+.introduceImg {
+  float:left;
+  width:35%;
+  height: 100%;
+  margin-left: 3%;
+}
+.introduceText {
+  height:100%;
+  width:50%;
+  float:left;
+  margin-left:50rpx;
+}
+.introduceText {
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.introducePF_fenshu {
+  display: inline-block;
+  color: #f56d4c;
+}
+.summary {
+  padding: 15rpx 40rpx;
+}
+.summaryTitle {
+  line-height: 80rpx;
+}
+.summaryText {
+  font-size: 24rpx;
+}

@@ -1,0 +1,14 @@
+<!--pages/movieList/movieList.wxml-->
+<view class='wrap'>
+    <view class='contentInfo'>
+      <view class='list' wx:for="{{movieList}}" bindtap='goContent' id='{{item.id}}'>
+        <image src="{{item.images.small}}" class='listImg'></image>
+          <view class='listInfo'>
+            <view class='movieName'>电影名：{{item.title}}</view>
+            <view class='directors'>导演：{{item.directors[0].name}}</view>
+            <view class='collect_count'>收藏数：{{item.collect_count}}</view>
+            <view class='genres'>分类：{{item.genres}}</view>
+          </view>
+        </view>
+    </view>
+</view>

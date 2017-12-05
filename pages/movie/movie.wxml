@@ -1,19 +1,23 @@
+
 <!--电影轮播图  -->
-<swiper class='slider' indicator-dots="true"
-  autoplay="true" interval="3000" duration="500" circular="true" indicator-active-color="#fff">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
-    </swiper-item>
-  </block>
-</swiper>
-<view class='content'>
+<view class='banner'>
+  <view class='bannerText'>感谢 豆瓣 对本小程序的支持</view>
+  <image class='bannerImg' src='../../images/douban.png'></image>
+</view>
+<!--搜索框  -->
+<view class='searchBox'>
+  <image src='../../images/search.png' class='serachImg' bindtap='moviesearch'></image>
+  <input class='search' placeholder='请输入……' name="searchValue" bindinput ="getMoviesearchValue" bindconfirm = "moviesearch" confirm-type = "search"></input>
+</view>
+<!--内容  -->
+<!--热映  -->
+<view class='content' bindtap='gomovieList' id='hotData'>
   <view class='contentBox'>
     <view class='contentTitle'> 
      <image src="../../images/hot.png" class='conIcon'></image>
       热映
     </view>
-    <view class='contentInfo'>
+    <view class='contentInfo reying'>
       <view class='list' wx:for="{{hotData}}">
         <image src="{{item.images.small}}" class='listImg'></image>
          <view class='listInfo'>
@@ -23,7 +27,46 @@
             <view class='genres'>分类：{{item.genres}}</view>
          </view>
       </view>
-     
+    </view>
+  </view>
+</view>
+<!--即将上映  -->
+<view class='content' bindtap='gomovieList' id='goData'>
+  <view class='contentBox'>
+    <view class='contentTitle'> 
+     <image src="../../images/shangying.png" class='conIcon'></image>
+      即将上映
+    </view>
+    <view class='contentInfo reying'>
+      <view class='list' wx:for="{{goData}}">
+        <image src="{{item.images.small}}" class='listImg'></image>
+         <view class='listInfo'>
+            <view class='movieName'>电影名：{{item.title}}</view>
+            <view class='directors'>导演：{{item.directors[0].name}}</view>
+            <view class='collect_count'>收藏数：{{item.collect_count}}</view>
+            <view class='genres'>分类：{{item.genres}}</view>
+         </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--Top 250  -->
+<view class='content' bindtap='gomovieList' id='top250Data'>
+  <view class='contentBox'>
+    <view class='contentTitle'> 
+     <image src="../../images/top250.png" class='conIcon'></image>
+      Top250
+    </view>
+    <view class='contentInfo reying'>
+      <view class='list' wx:for="{{top250Data}}">
+        <image src="{{item.images.small}}" class='listImg'></image>
+         <view class='listInfo'>
+            <view class='movieName'>电影名：{{item.title}}</view>
+            <view class='directors'>导演：{{item.directors[0].name}}</view>
+            <view class='collect_count'>收藏数：{{item.collect_count}}</view>
+            <view class='genres'>分类：{{item.genres}}</view>
+         </view>
+      </view>
     </view>
   </view>
 </view>

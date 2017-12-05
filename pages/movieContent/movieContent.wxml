@@ -1,0 +1,24 @@
+<!--pages/movieContent/movieContent.wxml-->
+<view class='wrap'>
+  <view class='header'> {{content.title}}</view>
+  <view class='content'>
+    <view class='introduce'>
+        <image src='{{content.images.small}}' class='introduceImg'></image>
+        <view class='introduceText'>
+          <view class='introducePF'>
+          评分：<view class='introducePF_fenshu'>{{content.rating.average}}</view> 
+            {{content.ratings_count}}人评分
+          </view>
+          <view class='introduceYear'>
+          {{content.year}}年
+          </view>
+          <view class='introduceCountry'>国家：{{content.countries[0]}}</view>
+          <view class='introduceLB'>电影类别：{{content.genres}}</view>
+        </view>
+    </view>
+    <view class='summary'>
+        <view class='summaryTitle'>简介</view>
+        <view class='summaryText'>{{content.summary}}</view>
+    </view>
+  </view>
+</view>
